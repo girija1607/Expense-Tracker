@@ -22,7 +22,7 @@ function App() {
       setError("");
 
       try {
-        let url = "http://localhost:3000/expenses?";
+        let url = "https://expense-tracker-gyk2.onrender.com/expenses?";
 
         if (categoryFilter) {
           url += `category=${categoryFilter}&`;
@@ -90,7 +90,7 @@ function App() {
 
     const key = crypto.randomUUID();
 
-    await fetch("http://localhost:3000/expenses", {
+    await fetch("https://expense-tracker-gyk2.onrender.com/expenses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -103,7 +103,7 @@ function App() {
     });
 
     // refresh manually
-    const res = await fetch("http://localhost:3000/expenses");
+    const res = await fetch("https://expense-tracker-gyk2.onrender.com/expenses");
     const data = await res.json();
     setExpenses(data);
 
